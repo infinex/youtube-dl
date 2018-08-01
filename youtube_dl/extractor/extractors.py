@@ -1430,6 +1430,7 @@ from .youtube import (
     YoutubeSearchDateIE,
     YoutubeSearchIE,
     YoutubeSearchURLIE,
+    YoutubeChannelSearchURLIE,
     YoutubeShowIE,
     YoutubeSubscriptionsIE,
     YoutubeTruncatedIDIE,

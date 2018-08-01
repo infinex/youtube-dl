@@ -2428,7 +2428,7 @@ class YoutubeChannelIE(YoutubePlaylistBaseInfoExtractor):
 
     @classmethod
     def suitable(cls, url):
-        return (False if YoutubePlaylistsIE.suitable(url) or YoutubeLiveIE.suitable(url)
+        return (False if YoutubePlaylistsIE.suitable(url) or YoutubeLiveIE.suitable(url) or YoutubeChannelSearchURLIE.suitable(url)
                 else super(YoutubeChannelIE, cls).suitable(url))
 
     def _build_template_url(self, url, channel_id):
@@ -2685,6 +2685,18 @@ class YoutubeSearchDateIE(YoutubeSearchIE):
     _SEARCH_KEY = 'ytsearchdate'
     IE_DESC = 'YouTube.com searches, newest videos first'
     _EXTRA_QUERY_ARGS = {'search_sort': 'video_date_uploaded'}
+
+
+class YoutubeChannelSearchURLIE(YoutubeSearchBaseInfoExtractor):
+    IE_DESC = 'YouTube.com channel search URLs'
+    IE_NAME = 'youtube:channel_search_url'
+    _VALID_URL = r'https?://(?:www\.)?youtube\.com/(?:user|channel)/(?P<id>[^/]+)/search\?(.*?&)?(?:query)=(?P<query>[^&]+)(?:[&]|$)'
+
+    def _real_extract(self, url):
+        mobj = re.match(self._VALID_URL, url)
+        query = compat_urllib_parse_unquote_plus(mobj.group('query'))
+        webpage = self._download_webpage(url, query)
+        return self.playlist_result(self._process_page(webpage), playlist_title=query)
 
 
 class YoutubeSearchURLIE(YoutubeSearchBaseInfoExtractor):
