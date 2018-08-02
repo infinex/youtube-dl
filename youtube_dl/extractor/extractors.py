@@ -1421,6 +1421,7 @@ from .yourupload import YourUploadIE
 from .youtube import (
     YoutubeIE,
     YoutubeChannelIE,
+    YoutubeChannelSearchURLIE,
     YoutubeFavouritesIE,
     YoutubeHistoryIE,
     YoutubeLiveIE,
@@ -1430,7 +1431,6 @@ from .youtube import (
     YoutubeSearchDateIE,
     YoutubeSearchIE,
     YoutubeSearchURLIE,
-    YoutubeChannelSearchURLIE,
     YoutubeShowIE,
     YoutubeSubscriptionsIE,
     YoutubeTruncatedIDIE,
