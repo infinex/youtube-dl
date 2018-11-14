@@ -11,7 +11,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 import copy
 
-from test.helper import FakeYDL, assertRegexpMatches
+from test_pubsub.helper import FakeYDL, assertRegexpMatches
 from youtube_dl import YoutubeDL
 from youtube_dl.compat import compat_str, compat_urllib_error
 from youtube_dl.extractor import YoutubeIE

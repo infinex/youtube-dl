@@ -12,7 +12,7 @@ import unittest
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 
-from test.helper import FakeYDL
+from test_pubsub.helper import FakeYDL
 from youtube_dl.cache import Cache
 
 

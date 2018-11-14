@@ -22,7 +22,7 @@ IGNORED_DIRS = [
     '.tox',
 ]
 
-from test.helper import assertRegexpMatches
+from test_pubsub.helper import assertRegexpMatches
 
 
 class TestUnicodeLiterals(unittest.TestCase):

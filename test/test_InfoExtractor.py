@@ -9,7 +9,7 @@ import sys
 import unittest
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from test.helper import FakeYDL, expect_dict, expect_value
+from test_pubsub.helper import FakeYDL, expect_dict, expect_value
 from youtube_dl.compat import compat_etree_fromstring
 from youtube_dl.extractor.common import InfoExtractor
 from youtube_dl.extractor import YoutubeIE, get_info_extractor

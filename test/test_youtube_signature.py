@@ -12,7 +12,7 @@ import io
 import re
 import string
 
-from test.helper import FakeYDL
+from test_pubsub.helper import FakeYDL
 from youtube_dl.extractor import YoutubeIE
 from youtube_dl.compat import compat_str, compat_urlretrieve
 
